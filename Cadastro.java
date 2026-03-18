@@ -8,25 +8,45 @@ import javax.swing.JOptionPane;
  */
 public class Cadastro{
     public static void main(String[] args){
-        /*Aluno[] alunos = new Aluno[3];
-        
-        alunos[0] = new Aluno("Chiko Chikoso",19,"RA00360273",1);
-        alunos[1] = new Aluno("Guilherme Pequeneza",20,"RA00320253",2);
-        alunos[2] = new Aluno("Pequeneza Guilherme",21,"RA00310469",3);
-        
-        for(int i = 0;i<alunos.length;i++){
-            System.out.println(alunos[i].toString());
-            System.out.println();
-        }*/
-        
-        String nomeAluno = JOptionPane.showInputDialog("Nome do Aluno: ");
-        int idade = Integer.parseInt(JOptionPane.showInputDialog("Idade do Aluno: "));
-        String ra = JOptionPane.showInputDialog("RA do Aluno(RA1234567): ");
-        int semestre = Integer.parseInt(JOptionPane.showInputDialog("Semestre do Aluno: "));
-        
-        Aluno[] alunos = new Aluno[3];
-        
-        alunos[0] = new Aluno(nomeAluno,idade,ra,semestre);
-        System.out.println(alunos[0].toString());
+        Armazenador armazenador = new Armazenador();
+        String nomeAluno,ra,disciplina;
+        int idade,semestre;
+        int opcao = 99;
+        while(opcao != 0){
+            JOptionPane.showMessageDialog(null, "Escolha uma opção: \n3 - Exibir Alunos\n2 - Remover aluno (pelo RA)\n1 - Criar aluno\n0 - Sair");         
+            
+            opcao = Integer.parseInt(JOptionPane.showInputDialog("Escolha a opçao: "));
+            
+            switch(opcao){
+                case 3:
+                    if(armazenador.qtdAlunos == 0)      
+                        JOptionPane.showMessageDialog(null, "Nao existem Alunos\n");
+                        
+                    for(int i = 0;i<armazenador.qtdAlunos;i++){
+                        JOptionPane.showMessageDialog(null, armazenador.alunos[i].toString() +"\n");                        
+                    }
+                    break;
+                case 2:
+                    ra = JOptionPane.showInputDialog("RA do Aluno(RA1234567): ");
+                    
+                    armazenador.removerAluno(ra);
+                    break;
+                case 1:
+                    nomeAluno = JOptionPane.showInputDialog("Nome do Aluno: ");
+                    idade = Integer.parseInt(JOptionPane.showInputDialog("Idade do Aluno: "));
+                    ra = JOptionPane.showInputDialog("RA do Aluno(RA1234567): ");
+                    disciplina = JOptionPane.showInputDialog("disciplina do Aluno: ");
+                    semestre = Integer.parseInt(JOptionPane.showInputDialog("Semestre do Aluno: "));      
+                    
+                    armazenador.criarAluno(nomeAluno, idade, ra, disciplina, semestre);
+                    break;
+                case 0:
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção Invalida, tente novamente \n");
+                    break;
+            }
+                
+        }
     }
 }
