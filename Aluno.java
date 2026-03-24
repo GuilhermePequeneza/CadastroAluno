@@ -16,14 +16,8 @@ public class Aluno extends Pessoa{
         this.ra = ra; 
         this.disciplina = disciplina;
         this.semestre = semestre;
-    }
-    
-    public void removerAluno(){
-        this.nome = null;
-        this.idade = 0;
-        this.ra = null;
-        this.semestre = 0;
-    }
+    }  
+   
     
     public String getRA(){
         return this.ra;

@@ -1,4 +1,3 @@
-import javax.swing.JOptionPane;
 /**
  * Escreva uma descrição da classe App aqui.
  * 
@@ -8,29 +7,44 @@ import javax.swing.JOptionPane;
 public class App
 {
     public static void main(String[] args){   
-        int qtdMaxima = Integer.parseInt(JOptionPane.showInputDialog("Quantos alunos é o maximo: "));
+        
+        IEntrada entrada = new EntradaGrafica();
+        ISaida saida = new SaidaGrafica();
+        IMenu menu = new MenuGrafico(); 
+        
+        /*
+        IEntrada entrada = new EntradaTexto();             
+        ISaida saida = new SaidaTexto();                
+        IMenu menu = new MenuTexto();
+        */
+        
+        int qtdMaxima = Integer.parseInt(entrada.lerString("Qual a quantidade de alunos?"));
         Cadastro cadastro = new Cadastro(qtdMaxima);
         String nomeAluno,ra,disciplina;
         int idade,semestre;
-        int opcao = 99;
-        while(opcao != 0){                 
-            opcao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma opção: \n3 - Exibir Alunos\n2 - Remover aluno (pelo RA)\n1 - Criar aluno\n0 - Sair"));
+        int opcao;     
+         
+        
+        String[] itensMenu = {"1 - inserir", "2 - remover", "3 - listar", "0 - sair"};
+        
+        do{                 
+            opcao = Integer.parseInt(entrada.lerString("1 - inserir\n2 - remover\n3 - listar\n0 - sair"));
             
             switch(opcao){
                 case 3:
                     cadastro.listar();
                     break;
                 case 2:
-                    ra = JOptionPane.showInputDialog("RA do Aluno(RA1234567): ");
+                    ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
                     
                     cadastro.remover(ra);
                     break;
                 case 1:
-                    nomeAluno = JOptionPane.showInputDialog("Nome do Aluno: ");
-                    idade = Integer.parseInt(JOptionPane.showInputDialog("Idade do Aluno: "));
-                    ra = JOptionPane.showInputDialog("RA do Aluno(RA1234567): ");
-                    disciplina = JOptionPane.showInputDialog("Disciplina do Aluno: ");
-                    semestre = Integer.parseInt(JOptionPane.showInputDialog("Semestre do Aluno: "));      
+                    nomeAluno = entrada.lerString("Qual o nome do aluno?");
+                    idade = Integer.parseInt(entrada.lerString("Qual a idade do Aluno?"));
+                    ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
+                    disciplina = entrada.lerString("Qual a disciplina que o aluno cursa?");
+                    semestre = Integer.parseInt(entrada.lerString("Qual o semestre do aluno?"));   
                     
                     Aluno aluno = new Aluno(nomeAluno,idade,ra,disciplina,semestre);
                     
@@ -39,10 +53,10 @@ public class App
                 case 0:
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção Invalida, tente novamente \n");
+                    saida.mostrarMsg("Opção Invalida, tente novamente \n");
                     break;
             }
                 
-        }
+        }while(opcao != 0);
     }
 }
