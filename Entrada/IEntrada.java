@@ -1,4 +1,4 @@
-
+package Entrada;
 /**
  * Escreva a descrição da interface IEntrada aqui.
  * 

@@ -1,4 +1,4 @@
-
+package Entrada;
 import javax.swing.JOptionPane;
 
 /**

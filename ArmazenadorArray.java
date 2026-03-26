@@ -1,3 +1,5 @@
+import Saida.*;
+import Entrada.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -8,6 +10,16 @@ import javax.swing.JOptionPane;
  */
 public class ArmazenadorArray implements IArmazenador
 {
+    
+    IEntrada entrada = new EntradaGrafica();
+    ISaida saida = new SaidaGrafica();   
+    
+    /*   
+    IEntrada entrada = new EntradaTexto();             
+    ISaida saida = new SaidaTexto();            
+    */
+    
+    
     private int qtdMaxima;
     Aluno[] alunos;
     int qtdAlunos;
@@ -20,24 +32,24 @@ public class ArmazenadorArray implements IArmazenador
     
     public void inserirAluno(Aluno a){
         if(qtdAlunos == qtdMaxima){
-            JOptionPane.showMessageDialog(null, "Quantidade Maxima de alunos atingida\n");  
+            saida.mostrarMsg("Quantidade Maxima de alunos atingida\n");  
             return;
         }
         for(int i = 0;i<qtdAlunos;i++){
             if(alunos[i].getRA().equals(a.getRA())){                
-                JOptionPane.showMessageDialog(null, "Aluno já existe\n");  
+                saida.mostrarMsg("Aluno já existe\n");  
                 return;
             }
         }    
         
         alunos[qtdAlunos] = a;
         qtdAlunos++;
-        JOptionPane.showMessageDialog(null, "Aluno criado\n");
+        saida.mostrarMsg("Aluno criado\n");
         
     }
     public void removerAluno(String ra){
         if(qtdAlunos == 0){
-            JOptionPane.showMessageDialog(null, "Nao existem alunos\n");
+            saida.mostrarMsg("Nao existem alunos\n");
             return;
         }
         for(int i = 0;i<qtdAlunos;i++){
@@ -47,18 +59,18 @@ public class ArmazenadorArray implements IArmazenador
                 }
                 alunos[qtdAlunos-1] = null;
                 qtdAlunos--;
-                JOptionPane.showMessageDialog(null, "Aluno removido\n");   
+                saida.mostrarMsg("Aluno removido\n");   
                 return;
             }
         }
-        JOptionPane.showMessageDialog(null, "Aluno não existe\n");                 
+        saida.mostrarMsg("Aluno não existe\n");                 
     }
     public void listarAlunos(){
         if(qtdAlunos == 0)      
-            JOptionPane.showMessageDialog(null, "Nao existem Alunos\n");
+            saida.mostrarMsg("Nao existem Alunos\n");
                         
         for(int i = 0;i<qtdAlunos;i++){
-            JOptionPane.showMessageDialog(null, alunos[i].toString());                        
+            saida.mostrarMsg(alunos[i].toString());                        
         }        
     }
 }

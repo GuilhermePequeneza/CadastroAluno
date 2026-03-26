@@ -1,4 +1,4 @@
-
+package Saida;
 /**
  * Escreva uma descrição da classe SaidaConsole aqui.
  * 
