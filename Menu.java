@@ -10,8 +10,11 @@ import Entrada.*;
 public class Menu{
     
     public int criarMenu(String opcoes[]){        
-        IEntrada entrada = new EntradaGrafica();        
+        IEntrada entrada = new EntradaGrafica();    
+        ISaida saida = new SaidaGrafica();
         //IEntrada entrada = new EntradaTexto();
+        //ISaida saida = new SaidaTexto();
+        String input = "";
         int opcao = -1;
         int erro = 0;
         
@@ -23,25 +26,32 @@ public class Menu{
         }
         
         itens = itens + "\n\nSelecione a opcao: ";
-        /*do{
+        do{
             try{
                 erro = 0;
-                opcao = Integer.parseInt(entrada.lerString(itens));
+                input = entrada.lerString(itens);
+                if(input != null){
+                    if(!input.equals(""))
+                        opcao = Integer.parseInt(input.trim());
+                    else{
+                        erro = 1;
+                        saida.mostrarMsg("OPCAO VAZIA!!! Tente Novamente");
+                    }
+                }
             } catch(NumberFormatException e){
                 erro = 1;
-                saida.mostrarMsg("QUANTIDADE INVALIDA!!! Tente Novamente");
+                saida.mostrarMsg("OPCAO INVALIDA!!! Tente Novamente");
             } catch(Exception e){
                 erro = 1;
                 saida.mostrarMsg("ERRO!! Tente Novamente!");
-            }            
-            if(erro == 0){
-                if(qtdMaxima < 0 ){
-                    erro = 1;
-                    saida.mostrarMsg("A quantidade de alunos DEVE ser POSITIVA!! Tente Novamente");
-                }
-            }
-        }while(erro == 1);*/
-        opcao = Integer.parseInt(entrada.lerString(itens));
+            }   
+        }while(erro == 1);
+        
+        if(input == null){
+            opcao = 0;
+        }
+        
+        //opcao = Integer.parseInt(entrada.lerString(itens));
         return opcao;
     }
 }

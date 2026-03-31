@@ -53,6 +53,7 @@ public class App
         
         do{                 
             String[] itensMenu = {"1 - inserir", "2 - remover", "3 - editar", "4 - listar", "0 - sair"};
+            String[] confirmaErro = {"1 - não", "0 - sim"};
             opcao = menu.criarMenu(itensMenu);
             
             switch(opcao){
@@ -65,7 +66,24 @@ public class App
                     cadastro.remover(ra);
                     break;
                 case 1:
-                    nomeAluno = entrada.lerString("Qual o nome do aluno?");
+                    
+                    //Começo do teste pra inserção de nomeAluno   
+                    do{
+                        erro = 0;
+                        nomeAluno = entrada.lerString("Qual o nome do aluno?");
+                        if(nomeAluno != null){
+                            nomeAluno = nomeAluno.trim();
+                            if(nomeAluno.equals("")){
+                                erro = 1;
+                                saida.mostrarMsg("Nome Vazio!! Tente Novamente!");
+                            }
+                        }
+                    }while(erro == 1);
+                    if(nomeAluno == null){
+                        break;
+                    }
+                    //Fim do teste pra inserção de nomeAluno
+                    
                     
                     //Começo do teste pra inserção de idade                    
                     do{
@@ -80,9 +98,9 @@ public class App
                             saida.mostrarMsg("ERRO!! Tente Novamente!");
                         }            
                         if(erro == 0){
-                            if(idade < 0 || idade > 151){
+                            if(idade < 1 || idade > 116){
                                 erro = 1;
-                                saida.mostrarMsg("A idade do aluno DEVE ser entre 1 E 151");
+                                saida.mostrarMsg("A idade do aluno DEVE ser entre 1 E 116");
                             }
                         }
                     }while(erro == 1);
@@ -92,14 +110,15 @@ public class App
                     do{
                         erro = 0;
                         ra = entrada.lerString("Qual o RA do aluno(RA1234567)?"); 
-                        if(ra != null){                  
-                            if(ra.equals("")){
+                        if(ra != null){ //BOTAO CANCELAR NAO APERTADO                  
+                            ra = ra.toUpperCase();
+                            if(ra.equals("")){ 
                             erro = 1;
                             saida.mostrarMsg("o RA enviado esta VAZIO!!! Tente Novamente");
                             }
                         }                                              
                     }while(erro == 1);
-                    if(ra == null){
+                    if(ra == null){ //BOTAO CANCELAR APERTADO, LOGO USUARIO QUER SAIR DA INSERCAO
                         break;
                     }                    
                     //Fim do teste de inserção de RA                    
@@ -120,8 +139,8 @@ public class App
                         if(erro == 0){
                             if(semestre < 1 || semestre > 12){
                                 erro = 1;
-                                saida.mostrarMsg("A idade do aluno DEVE ser entre 15 E 100");
-                            }
+                                saida.mostrarMsg("O Semestre DEVE SER entre 1 e 12");
+                            }                            
                         }
                     }while(erro == 1);
                     //Fim do teste pra inserção de semestre
@@ -130,9 +149,9 @@ public class App
                     
                     cadastro.inserir(aluno);
                     break;
-                case 0:                    
-                    opcao = menu.criarMenu(itensMenu);
-                    break;
+                case 0:    
+                    opcao = menu.criarMenu(confirmaErro);
+                    break;                
                 default:
                     saida.mostrarMsg("Opção Invalida, tente novamente \n");
                     break;
