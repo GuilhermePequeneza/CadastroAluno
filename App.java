@@ -71,15 +71,15 @@ public class App
                     do{
                         erro = 0;
                         nomeAluno = entrada.lerString("Qual o nome do aluno?");
-                        if(nomeAluno != null){
+                        if(nomeAluno != null){ // o nomeAluno nao pode ser nulo pra fazermos as verificações e padronizações
                             nomeAluno = nomeAluno.trim();
-                            if(nomeAluno.equals("")){
+                            if(nomeAluno.equals("")){ // Botao ok Apertado sem inserir nada
                                 erro = 1;
                                 saida.mostrarMsg("Nome Vazio!! Tente Novamente!");
                             }
                         }
                     }while(erro == 1);
-                    if(nomeAluno == null){
+                    if(nomeAluno == null){ //BOTAO CANCELAR APERTADO, LOGO USUARIO QUER SAIR DA INSERCAO
                         break;
                     }
                     //Fim do teste pra inserção de nomeAluno
@@ -90,14 +90,11 @@ public class App
                         try{
                             erro = 0;
                             idade = Integer.parseInt(entrada.lerString("Qual a idade do Aluno?"));
-                        } catch(NumberFormatException e){
+                        } catch(NumberFormatException e){ //
                             erro = 1;
                             saida.mostrarMsg("IDADE INVALIDA!!! Tente Novamente");
-                        } catch(Exception e){
-                            erro = 1;
-                            saida.mostrarMsg("ERRO!! Tente Novamente!");
-                        }            
-                        if(erro == 0){
+                        }    
+                        if(erro == 0){ // NAO TEM PORQUE VERIFICAR ERRO SE JA TEVE UM ERRO
                             if(idade < 1 || idade > 116){
                                 erro = 1;
                                 saida.mostrarMsg("A idade do aluno DEVE ser entre 1 E 116");
@@ -110,9 +107,9 @@ public class App
                     do{
                         erro = 0;
                         ra = entrada.lerString("Qual o RA do aluno(RA1234567)?"); 
-                        if(ra != null){ //BOTAO CANCELAR NAO APERTADO                  
-                            ra = ra.toUpperCase();
-                            if(ra.equals("")){ 
+                        if(ra != null){ // o ra nao pode ser nulo pra fazermos as verificações e padronizações            
+                            ra = ra.toUpperCase().trim();
+                            if(ra.equals("")){ // Botao ok Apertado sem inserir nada
                             erro = 1;
                             saida.mostrarMsg("o RA enviado esta VAZIO!!! Tente Novamente");
                             }
@@ -132,11 +129,8 @@ public class App
                         } catch(NumberFormatException e){
                             erro = 1;
                             saida.mostrarMsg("SEMESTRE INVALIDO!!! Tente Novamente");
-                        } catch(Exception e){
-                            erro = 1;
-                            saida.mostrarMsg("ERRO!! Tente Novamente!");
-                        }            
-                        if(erro == 0){
+                        }           
+                        if(erro == 0){ // NAO TEM PORQUE VERIFICAR ERRO SE JA TEVE UM ERRO
                             if(semestre < 1 || semestre > 12){
                                 erro = 1;
                                 saida.mostrarMsg("O Semestre DEVE SER entre 1 e 12");
