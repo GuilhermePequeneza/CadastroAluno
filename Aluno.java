@@ -23,7 +23,16 @@ public class Aluno extends Pessoa{
         return this.ra;
     }
     
+        public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+    
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+    
     public String toString(){
         return ("Nome: " + nome.toString() + "\nIdade: " + this.idade + "\nRA: " + ra + "\nDisciplina: " + disciplina + "\nSemestre: " + semestre);
     }
+    
 }

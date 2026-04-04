@@ -21,5 +21,14 @@ public class Cadastro{
     }
     public void listar(){
         armazenador.listarAlunos();
-    }   
+    }  
+    public int acessarPAluno(String raAluno){
+        int pos;
+        pos = armazenador.acessarPosAluno(raAluno);
+        return pos;
+    }
+    
+    public void editar(int pos){
+        armazenador.editarAluno(pos);
+        }
 }

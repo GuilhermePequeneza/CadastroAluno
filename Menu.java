@@ -12,8 +12,10 @@ public class Menu{
     public int criarMenu(String opcoes[]){        
         IEntrada entrada = new EntradaGrafica();    
         ISaida saida = new SaidaGrafica();
+        
         //IEntrada entrada = new EntradaTexto();
         //ISaida saida = new SaidaTexto();
+        
         String input = "";
         int opcao = -1;
         int erro = 0;
@@ -25,6 +27,7 @@ public class Menu{
             
         }
         
+        //Concaquenação de String (acho)
         itens = itens + "\n\nSelecione a opcao: ";
         do{
             try{

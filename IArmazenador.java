@@ -10,4 +10,6 @@ public interface IArmazenador
     public void inserirAluno(Aluno a);
     public void removerAluno(String ra);
     public void listarAlunos();
+    public int acessarPosAluno(String raAluno);
+    public void editarAluno(int pos);
 }

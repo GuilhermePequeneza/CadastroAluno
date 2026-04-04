@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @version (um número da versão ou uma data)
  */
 public class ArmazenadorArray implements IArmazenador
-{
+    {
     
     IEntrada entrada = new EntradaGrafica();
     ISaida saida = new SaidaGrafica();   
@@ -72,5 +72,46 @@ public class ArmazenadorArray implements IArmazenador
         for(int i = 0;i<qtdAlunos;i++){
             saida.mostrarMsg(alunos[i].toString());                        
         }        
+    }
+    
+    public int acessarPosAluno(String raEdit){
+        int pos = 0;
+        for(int i = 0; i < qtdAlunos; i++){
+            if(alunos[i].getRA().equals(raEdit)){
+                pos = i;
+            }
+        }
+        return pos;
+    }
+    
+        public void editarAluno(int pos) {
+       String inputNome = entrada.lerString("Novo nome do Aluno?");
+       
+       if (inputNome != null && !inputNome.trim().equals("")) {
+            alunos[pos].nome = new NomePessoa(inputNome);
+       }
+    
+        String inputIdade = entrada.lerString("Nova Idade do Aluno?");
+        if (inputIdade != null && !inputIdade.trim().equals("")) {
+            try {
+                alunos[pos].idade = Integer.parseInt(inputIdade);
+            } catch (NumberFormatException e) {
+                saida.mostrarMsg("Idade inválida, edição cancelada.");
+            }
+       }
+    
+        String inputDisciplina = entrada.lerString("Nova disciplina?");
+        if (inputDisciplina != null && !inputDisciplina.trim().equals("")) {
+            alunos[pos].setDisciplina(inputDisciplina);
+       }
+    
+        String inputSemestre = entrada.lerString("Novo semestre?");
+        if (inputSemestre != null && !inputSemestre.trim().equals("")) {
+            try {
+                alunos[pos].setSemestre(Integer.parseInt(inputSemestre));
+            } catch (NumberFormatException e) {
+                saida.mostrarMsg("Semestre inválido, edição cancelada.");
+            }
+       }
     }
 }

@@ -20,9 +20,11 @@ public class App
         */
        
         int erro = 0;
+        int pos;
         int qtdMaxima = 0;              
         String nomeAluno = "";
         String ra = "";
+        String raEdit = "";
         String disciplina = "";
         int idade = 0;
         int semestre = 0;
@@ -33,7 +35,14 @@ public class App
         do{
             try{
                 erro = 0;
-                qtdMaxima = Integer.parseInt(entrada.lerString("Qual a quantidade de alunos?"));
+                String input = entrada.lerString("Qual a quantidade de alunos?");
+    
+            if (input == null) {       // usuário clicou X assim que Iniciou
+                System.exit(0);       
+            }
+            
+        
+            qtdMaxima = Integer.parseInt(input);
             } catch(NumberFormatException e){
                 erro = 1;
                 saida.mostrarMsg("QUANTIDADE INVALIDA!!! Tente Novamente");
@@ -60,7 +69,7 @@ public class App
             
             //Troca de Operadores, e Chamada dos metodos respectivos
             switch(opcao){
-                case 3:
+                case 4:
                     //Utiliza as Classe de Armazenamento em vetores
                     cadastro.listar();
                     break;
@@ -68,7 +77,18 @@ public class App
                     ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
                     cadastro.remover(ra);
                     break;
-
+                case 3: 
+                    //Opção para editar alunos
+                    try{
+                        raEdit = entrada.lerString("Qual o ra do aluno para editar?");
+                        pos = cadastro.acessarPAluno(raEdit);
+                        cadastro.editar(pos);
+                    } catch(Exception e){
+                        saida.mostrarMsg("Ra não encontrado");
+                    }
+                
+                    break;
+                    
                 case 1:
                     
                     //Começo do teste pra inserção de nomeAluno   
