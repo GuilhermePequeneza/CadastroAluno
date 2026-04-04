@@ -28,6 +28,8 @@ public class App
         int semestre = 0;
         int opcao;
         boolean usuSaiu = false;
+
+        //Buscando possiveis erros na primeira instancia do Cadastro Aluno
         do{
             try{
                 erro = 0;
@@ -56,15 +58,17 @@ public class App
             String[] confirmaErro = {"1 - não", "0 - sim"};
             opcao = menu.criarMenu(itensMenu);
             
+            //Troca de Operadores, e Chamada dos metodos respectivos
             switch(opcao){
                 case 3:
+                    //Utiliza as Classe de Armazenamento em vetores
                     cadastro.listar();
                     break;
                 case 2:
                     ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
-                    
                     cadastro.remover(ra);
                     break;
+
                 case 1:
                     
                     //Começo do teste pra inserção de nomeAluno   
@@ -72,13 +76,14 @@ public class App
                         erro = 0;
                         nomeAluno = entrada.lerString("Qual o nome do aluno?");
                         if(nomeAluno != null){ // o nomeAluno nao pode ser nulo pra fazermos as verificações e padronizações
-                            nomeAluno = nomeAluno.trim();
+                            nomeAluno = nomeAluno.trim(); // nomeAluno Recebe um metodo que Limpa espaços excedentes 
                             if(nomeAluno.equals("")){ // Botao ok Apertado sem inserir nada
                                 erro = 1;
                                 saida.mostrarMsg("Nome Vazio!! Tente Novamente!");
                             }
                         }
                     }while(erro == 1);
+                    
                     if(nomeAluno == null){ //BOTAO CANCELAR APERTADO, LOGO USUARIO QUER SAIR DA INSERCAO
                         break;
                     }
@@ -90,10 +95,11 @@ public class App
                         try{
                             erro = 0;
                             idade = Integer.parseInt(entrada.lerString("Qual a idade do Aluno?"));
-                        } catch(NumberFormatException e){ //
+                        } catch(NumberFormatException e){ //Execessao acionada pra caso Usuario entre com Algo != de Numero
                             erro = 1;
                             saida.mostrarMsg("IDADE INVALIDA!!! Tente Novamente");
-                        }    
+                        }
+
                         if(erro == 0){ // NAO TEM PORQUE VERIFICAR ERRO SE JA TEVE UM ERRO
                             if(idade < 1 || idade > 116){
                                 erro = 1;
@@ -115,6 +121,7 @@ public class App
                             }
                         }                                              
                     }while(erro == 1);
+                    
                     if(ra == null){ //BOTAO CANCELAR APERTADO, LOGO USUARIO QUER SAIR DA INSERCAO
                         break;
                     }                    
