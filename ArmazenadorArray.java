@@ -50,20 +50,20 @@ public class ArmazenadorArray implements IArmazenador
     public void removerAluno(String ra){
         if(qtdAlunos == 0){
             saida.mostrarMsg("Nao existem alunos\n");
-            return;
         }
-        for(int i = 0;i<qtdAlunos;i++){
-            if(alunos[i].getRA().equals(ra)){
-                for(int j = i;j<qtdAlunos;j++){
-                    alunos[j] = alunos[j+1];
+        else{
+            for(int i = 0;i<qtdAlunos;i++){
+                if(alunos[i].getRA().equals(ra)){
+                    for(int j = i;j<qtdAlunos - 1;j++){
+                        alunos[j] = alunos[j+1];
+                    }
+                    alunos[qtdAlunos-1] = null;
+                    qtdAlunos--;
+                    saida.mostrarMsg("Aluno removido\n");
                 }
-                alunos[qtdAlunos-1] = null;
-                qtdAlunos--;
-                saida.mostrarMsg("Aluno removido\n");   
-                return;
             }
+            //saida.mostrarMsg("Aluno não existe\n");
         }
-        saida.mostrarMsg("Aluno não existe\n");                 
     }
     public void listarAlunos(){
         if(qtdAlunos == 0)      

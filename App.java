@@ -21,7 +21,8 @@ public class App
        
         int erro = 0;
         int pos;
-        int qtdMaxima = 0;              
+        int qtdMaxima = 0;
+        int qtdAluno = 0;
         String nomeAluno = "";
         String ra = "";
         String raEdit = "";
@@ -74,19 +75,31 @@ public class App
                     cadastro.listar();
                     break;
                 case 2:
-                    ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
-                    cadastro.remover(ra);
+                    if(qtdAluno > 0){
+                        ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
+                        if(ra != null)
+                        {
+                            ra = ra.toUpperCase().trim();
+                            cadastro.remover(ra);
+                            qtdAluno--;
+                        }
+                    }
+                    else{
+                        saida.mostrarMsg("Não ha alunos para remover, crie um antes");
+                    }
                     break;
                 case 3: 
                     //Opção para editar alunos
-                    try{
+                    if(qtdAluno > 0){
                         raEdit = entrada.lerString("Qual o ra do aluno para editar?");
-                        
+                    
                         //verificação do caso: se der para modificar/tem aluno?
+                        //verificação de cancelamento
                         if(raEdit == null || raEdit.equals("")){
                             saida.mostrarMsg("Cancelando");
                             break;
                             }
+                        raEdit = raEdit.toUpperCase().trim();
                         pos = cadastro.acessarPAluno(raEdit);
                         //se a posição for esse sinal, é porque não achou
                         if(pos == -1){
@@ -94,8 +107,9 @@ public class App
                             break;
                             }
                         cadastro.editar(pos);
-                    } catch(Exception e){
-                        saida.mostrarMsg("Ra não encontrado");
+                    }
+                    else{
+                        saida.mostrarMsg("Não tem alunos cadastrados para editar");
                     }
                 
                     break;
@@ -200,6 +214,7 @@ public class App
                     Aluno aluno = new Aluno(nomeAluno,idade,ra,disciplina,semestre);
                     
                     cadastro.inserir(aluno);
+                    qtdAluno++;
                     break;
                 case 0:    
                     opcao = menu.criarMenu(confirmaErro);
