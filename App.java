@@ -81,7 +81,18 @@ public class App
                     //Opção para editar alunos
                     try{
                         raEdit = entrada.lerString("Qual o ra do aluno para editar?");
+                        
+                        //verificação do caso: se der para modificar/tem aluno?
+                        if(raEdit == null || raEdit.equals("")){
+                            saida.mostrarMsg("Cancelando");
+                            break;
+                            }
                         pos = cadastro.acessarPAluno(raEdit);
+                        //se a posição for esse sinal, é porque não achou
+                        if(pos == -1){
+                            saida.mostrarMsg("Cancelando");
+                            break;
+                            }
                         cadastro.editar(pos);
                     } catch(Exception e){
                         saida.mostrarMsg("Ra não encontrado");
@@ -147,6 +158,24 @@ public class App
                     }                    
                     //Fim do teste de inserção de RA                    
                                          
+                    //Começo do teste para inserção da Disciplina
+                     do{
+                        try{
+                            erro = 0;
+                            disciplina = entrada.lerString("Qual a Disciplina do Aluno?");
+                            if(ra != null){ // a disciplina nao pode ser nulo pra fazermos as verificações e padronizações            
+                            disciplina = disciplina.toUpperCase().trim();
+                            if(ra.equals("")){ // Botao ok Apertado sem inserir nada
+                                erro = 1;
+                                saida.mostrarMsg("A Disciplina Está vazia, tente novamente");
+                                }
+                            }
+                        }  catch(Exception e){
+                            saida.mostrarMsg("Não encontrado Tente novamente");
+                            erro = 1;
+                        }           
+                    }while(erro == 1);
+                    
                     
                     //Começo do teste pra inserção de semestre
                     do{
@@ -165,6 +194,8 @@ public class App
                         }
                     }while(erro == 1);
                     //Fim do teste pra inserção de semestre
+                    
+                    
                     
                     Aluno aluno = new Aluno(nomeAluno,idade,ra,disciplina,semestre);
                     
