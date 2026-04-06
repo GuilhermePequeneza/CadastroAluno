@@ -42,7 +42,6 @@ public class App
                 System.exit(0);       
             }
             
-        
             qtdMaxima = Integer.parseInt(input);
             } catch(NumberFormatException e){
                 erro = 1;
@@ -60,9 +59,6 @@ public class App
         }while(erro == 1);  
         Cadastro cadastro = new Cadastro(qtdMaxima);
          
-        
-        
-        
         do{                 
             String[] itensMenu = {"1 - inserir", "2 - remover", "3 - editar", "4 - listar", "0 - sair"};
             String[] confirmaErro = {"1 - não", "0 - sim"};
@@ -70,11 +66,12 @@ public class App
             
             //Troca de Operadores, e Chamada dos metodos respectivos
             switch(opcao){
-                case 4:
+                case 4:  //Opção para listar os alunos
                     //Utiliza as Classe de Armazenamento em vetores
                     cadastro.listar();
                     break;
-                case 2:
+                    
+                case 2: //opção para remover alunos
                     if(qtdAluno > 0){
                         ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
                         if(ra != null)
@@ -88,6 +85,7 @@ public class App
                         saida.mostrarMsg("Não ha alunos para remover, crie um antes");
                     }
                     break;
+                    
                 case 3: 
                     //Opção para editar alunos
                     if(qtdAluno > 0){
@@ -111,10 +109,14 @@ public class App
                     else{
                         saida.mostrarMsg("Não tem alunos cadastrados para editar");
                     }
-                
                     break;
                     
                 case 1:
+                    if(qtdAluno == qtdMaxima){ //verifica se pode adicionar mais um aluno na ED, se puder ele faz o processo de inserção
+                        saida.mostrarMsg("Quantidade Maxima de alunos atingida\n");
+                        break;
+                    }
+                    
                     
                     //Começo do teste pra inserção de nomeAluno   
                     do{
@@ -154,15 +156,20 @@ public class App
                     }while(erro == 1);
                     //Fim do teste pra inserção de idade
                     
+                    
                     //Começo do teste de inserção de RA
                     do{
                         erro = 0;
-                        ra = entrada.lerString("Qual o RA do aluno(RA1234567)?"); 
+                        ra = entrada.lerString("Qual o RA do aluno ex:(RA1234567)?"); 
                         if(ra != null){ // o ra nao pode ser nulo pra fazermos as verificações e padronizações            
                             ra = ra.toUpperCase().trim();
                             if(ra.equals("")){ // Botao ok Apertado sem inserir nada
                             erro = 1;
                             saida.mostrarMsg("o RA enviado esta VAZIO!!! Tente Novamente");
+                            }
+                            if(cadastro.verificarRa(ra) == false){
+                                erro = 1;
+                                saida.mostrarMsg("Esse RA ja esta registrado, Tente Novamente");
                             }
                         }                                              
                     }while(erro == 1);
@@ -171,7 +178,8 @@ public class App
                         break;
                     }                    
                     //Fim do teste de inserção de RA                    
-                                         
+                           
+                    
                     //Começo do teste para inserção da Disciplina
                      do{
                         try{
@@ -189,6 +197,7 @@ public class App
                             erro = 1;
                         }           
                     }while(erro == 1);
+                    //Fim do teste de inserção da Disciplina
                     
                     
                     //Começo do teste pra inserção de semestre
@@ -210,20 +219,20 @@ public class App
                     //Fim do teste pra inserção de semestre
                     
                     
-                    
                     Aluno aluno = new Aluno(nomeAluno,idade,ra,disciplina,semestre);
                     
                     cadastro.inserir(aluno);
                     qtdAluno++;
                     break;
+                    
                 case 0:    
                     opcao = menu.criarMenu(confirmaErro);
-                    break;                
+                    break;   
+                    
                 default:
                     saida.mostrarMsg("Opção Invalida, tente novamente \n");
                     break;
             }
-                
         }while(opcao != 0);
     }
 }

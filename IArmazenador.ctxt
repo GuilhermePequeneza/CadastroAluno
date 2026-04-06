@@ -11,4 +11,6 @@ comment4.params=raAluno
 comment4.target=int\ acessarPosAluno(java.lang.String)
 comment5.params=pos
 comment5.target=void\ editarAluno(int)
-numComments=6
+comment6.params=ra
+comment6.target=boolean\ verificarRa(java.lang.String)
+numComments=7

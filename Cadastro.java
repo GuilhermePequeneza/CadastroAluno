@@ -27,8 +27,12 @@ public class Cadastro{
         pos = armazenador.acessarPosAluno(raAluno);
         return pos;
     }
-    
     public void editar(int pos){
         armazenador.editarAluno(pos);
-        }
+    }
+    public boolean verificarRa(String ra){
+        boolean r;
+        r = armazenador.verificarRa(ra);
+        return r;
+    }
 }

@@ -32,20 +32,23 @@ public class ArmazenadorArray implements IArmazenador
     
     public void inserirAluno(Aluno a){
         if(qtdAlunos == qtdMaxima){
-            saida.mostrarMsg("Quantidade Maxima de alunos atingida\n");  
-            return;
+            saida.mostrarMsg("Quantidade Maxima de alunos atingida\n"); 
         }
+        else{
+            alunos[qtdAlunos] = a;
+            qtdAlunos++;
+            saida.mostrarMsg("Aluno criado\n");
+        }
+    }
+    public boolean verificarRa(String ra){   //metodo usado para verificar se um RA ja existe na ED
         for(int i = 0;i<qtdAlunos;i++){
-            if(alunos[i].getRA().equals(a.getRA())){                
-                saida.mostrarMsg("Aluno já existe\n");  
-                return;
+            if(alunos[i].getRA().equals(ra)){                
+                //saida.mostrarMsg("Já existe um aluno com esse RA, tente outro\n");
+                //A mensagem de que ja existe um aluno com esse RA não sai por aqui, ela sai pelo App
+                return false;
             }
-        }    
-        
-        alunos[qtdAlunos] = a;
-        qtdAlunos++;
-        saida.mostrarMsg("Aluno criado\n");
-        
+        }
+        return true;
     }
     public void removerAluno(String ra){
         if(qtdAlunos == 0){

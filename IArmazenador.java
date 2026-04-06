@@ -12,4 +12,5 @@ public interface IArmazenador
     public void listarAlunos();
     public int acessarPosAluno(String raAluno);
     public void editarAluno(int pos);
+    public boolean verificarRa(String ra); //serve pra verificar se um RA ja esta sendo usado
 }
