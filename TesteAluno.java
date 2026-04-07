@@ -1,9 +1,13 @@
 
 /**
- * Escreva uma descrição da classe TesteAluno aqui.
+ * Testa a Classe Aluno
  * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 public class TesteAluno
 {

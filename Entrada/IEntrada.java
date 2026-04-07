@@ -1,15 +1,19 @@
 package Entrada;  
 /**
- * Escreva a descrição da interface IEntrada aqui.
+ * Interface da Entrada 
  * 
- * @author (seu nome aqui) 
- * @version (um número da versão ou data aqui)
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 
 public interface IEntrada
 {
     /**
-     * Exemplo de um cabeçalho de método - substitua este comentário pelo seu
+     * Le a String
      * 
      * @param  y    exemplo de um parâmetro de método
      * @return        o resultado produzido pelo sampleMethod 

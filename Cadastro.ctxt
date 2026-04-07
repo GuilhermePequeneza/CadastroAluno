@@ -1,18 +1,25 @@
 #BlueJ class context
 comment0.target=Cadastro
-comment0.text=\r\n\ Escreva\ uma\ descri\u00E7\u00E3o\ da\ classe\ Cadastro\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (um\ n\u00FAmero\ da\ vers\u00E3o\ ou\ uma\ data)\r\n
+comment0.text=\r\n\ Classe\ usada\ para\ fazer\ o\ Cadastro\ dos\ Alunos\r\n\ \r\n@author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 06/04/26\r\n
 comment1.params=qtd
 comment1.target=Cadastro(int)
+comment1.text=\r\n\ Construtor\ Armazena\ o\ armazenador\ que\ sua\ Arrays\r\n\ \r\n\ @param\ Quantidade\ maxima\ de\ alunos\r\n
 comment2.params=a
 comment2.target=void\ inserir(Aluno)
+comment2.text=\r\n\ Insere\ o\ Aluno\ desejado\r\n\ \r\n\ @param\ Objeto\ aluno\r\n
 comment3.params=ra
 comment3.target=void\ remover(java.lang.String)
+comment3.text=\r\n\ Remove\ o\ aluno\ com\ base\ em\ seu\ RA\r\n\ \r\n\ @param\ RA\ do\ aluno\r\n
 comment4.params=
 comment4.target=void\ listar()
+comment4.text=\r\n\ Lista\ todos\ os\ alunos\r\n\ \r\n\ @param\ Nenhum\r\n
 comment5.params=raAluno
 comment5.target=int\ acessarPAluno(java.lang.String)
+comment5.text=\r\n\ Intermediario\ para\ acessar\ a\ posi\u00E7\u00E3o\ do\ Aluno\ no\ array\r\n\ \r\n\ @param\ RA\ do\ aluno\r\n\ \r\n\ @return\ posi\u00E7\u00E3o\ do\ Aluno\r\n
 comment6.params=pos
 comment6.target=void\ editar(int)
+comment6.text=\r\n\ Intermediario\ para\ alterar\ os\ atributos\ do\ Aluno\r\n\ \r\n\ @param\ Posi\u00E7\u00E3o\ da\ Janela\r\n
 comment7.params=ra
 comment7.target=boolean\ verificarRa(java.lang.String)
+comment7.text=\r\n\ Intermediario\ para\ verificar\ se\ o\ RA\ existe\r\n\ \r\n\ @para\ String\ RA\r\n\ \r\n\ @return\ True\ ou\ false\r\n
 numComments=8

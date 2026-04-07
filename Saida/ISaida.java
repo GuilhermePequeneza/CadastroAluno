@@ -1,9 +1,13 @@
 package Saida; 
 /**
- * Escreva a descrição da interface ISaida aqui.
+ * Interface da saida 
  * 
- * @author (seu nome aqui) 
- * @version (um número da versão ou data aqui)
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 
 public interface ISaida {

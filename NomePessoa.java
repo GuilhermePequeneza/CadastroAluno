@@ -3,27 +3,39 @@
  * espaços extras (operaçoes herdados da classe pai).
  * Retorna o nome da pessoa em formato de bibliografia
  * 
- * @author Julio Arakaki 
- * @version 1.0 (19/03/2025)
+ * @author Felipe Estima
+ * @author Guilherme Pequenezza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 public class NomePessoa {
     // Atributos
     private Texto nome;
 
-    // Construtores
+    /**
+     * Contrutor: Armazena o nome e tira espaços extras
+     * 
+     * @param String nome
+     */
     public NomePessoa(String nome){
         setNome(nome);
     }
 
     /**
-     * @return the nome
+     * Pega o nome da pessoa
+     * 
+     * @return Nome
      */
     public String getNome() {
         return this.nome.getTxt();
     }
 
     /**
-     * @param nome the nome to set
+     * Define o nome
+     * 
+     * @param nome formatado
      */
     protected void setNome(String nome) {
         this.nome = new Texto(nome);

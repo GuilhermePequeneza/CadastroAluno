@@ -2,13 +2,24 @@ import Saida.*;
 import Entrada.*;
 
 /**
- * Write a description of class MenuGrafico here.
+ * Menu para mostrar as opções
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 public class Menu{
     
+    /**
+     * Faz as opções do Array dado as opções do Menu
+     * 
+     * @param Array de String
+     * 
+     * @return itens do Menu
+     */
     public int criarMenu(String opcoes[]){        
         IEntrada entrada = new EntradaGrafica();    
         ISaida saida = new SaidaGrafica();

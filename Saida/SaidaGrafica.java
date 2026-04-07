@@ -2,10 +2,14 @@ package Saida;
 import javax.swing.JOptionPane;
 
 /**
- * Escreva uma descrição da classe SaidaGrafica aqui.
+ * Classe para a saída Grafica implementada pela Inteface
  * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 public class SaidaGrafica implements ISaida {
     public void mostrarMsg(String s){

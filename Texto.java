@@ -1,8 +1,12 @@
 /**
  * Armazena um texto. Inverte texto e limpa espaços extras
  * 
- * @author Julio Arakaki 
- * @version 1.0 (19/03/2025)
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 public class Texto {
     // Atributo da classe ou varáveis de instancia

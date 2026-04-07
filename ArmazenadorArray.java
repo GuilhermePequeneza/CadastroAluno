@@ -3,10 +3,14 @@ import Entrada.*;
 import javax.swing.JOptionPane;
 
 /**
- * Escreva uma descrição da classe Armazenador aqui.
+ * ArmazenadorArray implementa a Interface do Armazenador.
  * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * @author Felipe Estima
+ * @author Guilherme Pequenezza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 06/04/26
  */
 public class ArmazenadorArray implements IArmazenador
     {
@@ -24,12 +28,22 @@ public class ArmazenadorArray implements IArmazenador
     Aluno[] alunos;
     int qtdAlunos;
     
+    /**
+     * Construtor: Armazena os alunos cadastrados em um Array
+     * 
+     * @param Quantidade Maxima de Alunos
+     * 
+     */
     ArmazenadorArray(int qtd){
         qtdMaxima = qtd;
         alunos = new Aluno[qtdMaxima];
         qtdAlunos = 0;
     }
     
+    /**
+     * Caso a Qauntidade maxima de alunos for atingida retorna a Mensagem
+     * Caso a Quantidade maxima de alunos não for atingida Cria Aluno
+     */
     public void inserirAluno(Aluno a){
         if(qtdAlunos == qtdMaxima){
             saida.mostrarMsg("Quantidade Maxima de alunos atingida\n"); 
@@ -40,6 +54,12 @@ public class ArmazenadorArray implements IArmazenador
             saida.mostrarMsg("Aluno criado\n");
         }
     }
+    
+    /**
+     * Verifica se o RA existe dentro da Estrutura de Dados
+     * 
+     * @return True ou False
+     */
     public boolean verificarRa(String ra){   //metodo usado para verificar se um RA ja existe na ED
         for(int i = 0;i<qtdAlunos;i++){
             if(alunos[i].getRA().equals(ra)){                
@@ -50,6 +70,10 @@ public class ArmazenadorArray implements IArmazenador
         }
         return true;
     }
+    
+    /**
+     * Remove o Aluno escolhido com base no RA disponibilizado
+     */
     public void removerAluno(String ra){
         if(qtdAlunos == 0){
             saida.mostrarMsg("Nao existem alunos\n");
@@ -68,6 +92,12 @@ public class ArmazenadorArray implements IArmazenador
             //saida.mostrarMsg("Aluno não existe\n");
         }
     }
+    
+    /**
+     * 
+     * Mostra todos os alunos já criados.
+     * Caso vazio mostra uma mensagem
+     */
     public void listarAlunos(){
         if(qtdAlunos == 0)      
             saida.mostrarMsg("Nao existem Alunos\n");
@@ -77,6 +107,11 @@ public class ArmazenadorArray implements IArmazenador
         }        
     }
     
+    /**
+     * Procura o Ra do aluno percorrendo a lista
+     * 
+     * @return Posição do Aluno dentro do array
+     */
     public int acessarPosAluno(String raEdit){
         int pos = -1;
         for(int i = 0; i < qtdAlunos; i++){
@@ -88,7 +123,11 @@ public class ArmazenadorArray implements IArmazenador
         return pos;
     }
     
-        public void editarAluno(int pos) {
+    /**
+     * Dada a posição do aluno dentro do array
+     * É possível alterar os atributos do respectivo aluno.
+     */
+    public void editarAluno(int pos) {
            String inputNome = entrada.lerString("Novo nome do Aluno?");
           
        if (inputNome != null && !inputNome.trim().equals("")) {

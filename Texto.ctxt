@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Texto
-comment0.text=\r\n\ Armazena\ um\ texto.\ Inverte\ texto\ e\ limpa\ espa\u00E7os\ extras\r\n\ \r\n\ @author\ Julio\ Arakaki\ \r\n\ @version\ 1.0\ (19/03/2025)\r\n
+comment0.text=\r\n\ Armazena\ um\ texto.\ Inverte\ texto\ e\ limpa\ espa\u00E7os\ extras\r\n\ \r\n\ @author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 06/04/26\r\n
 comment1.params=txt
 comment1.target=Texto(java.lang.String)
 comment1.text=\ \r\n\ Construtor\:\ armazena\ o\ texto\ e\ limpa\ os\ espa\u00E7os\ excedentes\r\n\ \r\n\ @param\ txt\ String\ com\ o\ texto\ que\ ser\u00E1\ armazenado\r\n
