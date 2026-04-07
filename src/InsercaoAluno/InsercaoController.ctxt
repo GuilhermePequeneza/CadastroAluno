@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=InsercaoController
+comment0.text=\r\n\ Escreva\ uma\ descri\u00E7\u00E3o\ da\ classe\ InsercaoController\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (um\ n\u00FAmero\ da\ vers\u00E3o\ ou\ uma\ data)\r\n
+comment1.params=tela\ cadastro
+comment1.target=InsercaoController(TelaInsercao,\ src.Cadastro)
+comment1.text=\r\n\ ConversorController\ construtor\ do\ Controller\r\n\r\n\ @param\ tela\ -\ tela\ grafica\ com\ os\ componentes\ (View)\r\n\ @param\ conversor\ -\ conversor\ de\ temp\ C-F\ (model)\r\n
+comment2.params=
+comment2.target=void\ configurarEventos()
+comment2.text=\r\n\ configurarEventos\ -\ configura\ componentes\ para\ receber\ os\ eventos\r\n\r\n
+comment3.params=
+comment3.target=void\ inserir()
+comment3.text=\r\n\ converter\ -\ converte\ a\ temperatura\ Celsius\ para\ Fahrenheit\r\n\r\n
+numComments=4

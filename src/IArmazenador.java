@@ -1,0 +1,17 @@
+package src; 
+
+/**
+ * Escreva uma descrição da classe IArmazenador aqui.
+ * 
+ * @author (seu nome) 
+ * @version (um número da versão ou uma data)
+ */
+public interface IArmazenador
+{    
+    public void inserirAluno(Aluno a);
+    public void removerAluno(String ra);
+    public void listarAlunos();
+    public int acessarPosAluno(String raAluno);
+    public void editarAluno(int pos);
+    public boolean verificarRa(String ra); //serve pra verificar se um RA ja esta sendo usado
+}
