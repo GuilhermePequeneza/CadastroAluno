@@ -51,14 +51,14 @@ public class ArmazenadorArray implements IArmazenador
      * 
      * @param objeto Aluno
      */
-    public void inserirAluno(Aluno a){
+    public boolean inserirAluno(Aluno a){
         if(qtdAlunos == qtdMaxima){
-            saida.mostrarMsg("Quantidade Maxima de alunos atingida\n"); 
+            return false;
         }
         else{
             alunos[qtdAlunos] = a;
             qtdAlunos++;
-            saida.mostrarMsg("Aluno criado\n");
+            return true;
         }
     }
     
@@ -85,9 +85,9 @@ public class ArmazenadorArray implements IArmazenador
      * 
      * @param RA do Aluno
      */
-    public void removerAluno(String ra){
+    public boolean removerAluno(String ra){
         if(qtdAlunos == 0){
-            saida.mostrarMsg("Nao existem alunos\n");
+            return false;
         }
         else{
             for(int i = 0;i<qtdAlunos;i++){
@@ -97,10 +97,10 @@ public class ArmazenadorArray implements IArmazenador
                     }
                     alunos[qtdAlunos-1] = null;
                     qtdAlunos--;
-                    saida.mostrarMsg("Aluno removido\n");
+                    return true;
                 }
             }
-            saida.mostrarMsg("Aluno não existe\n");
+            return false;
         }
     }
     
@@ -124,7 +124,7 @@ public class ArmazenadorArray implements IArmazenador
      * 
      * @param RA do Aluno
      */
-    public void editarAluno(String ra) {
+    public boolean editarAluno(String ra) {
         boolean achou = false;
         int i = 0;
         
@@ -138,7 +138,7 @@ public class ArmazenadorArray implements IArmazenador
         }
         
         if(!achou){
-            saida.mostrarMsg("Aluno não existe!");
+            return false;
         } else {
             if(isGrafica){
             TelaEdicao telaEdicao = new TelaEdicao();
@@ -183,6 +183,7 @@ public class ArmazenadorArray implements IArmazenador
                 saida.mostrarMsg("Edição concluída com sucesso no modo texto!");
             }
         }
+        return true;
     }
     
     public Aluno[] getAlunos(){

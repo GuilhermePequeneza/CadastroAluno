@@ -28,8 +28,8 @@ public class Cadastro{
      * 
      * @param Objeto aluno
      */
-    public void inserir(Aluno a){
-        armazenador.inserirAluno(a);
+    public boolean inserir(Aluno a){
+        return armazenador.inserirAluno(a);
     }
     
     /**
@@ -37,8 +37,8 @@ public class Cadastro{
      * 
      * @param RA do aluno
      */
-    public void remover(String ra){
-        armazenador.removerAluno(ra);
+    public boolean remover(String ra){
+        return armazenador.removerAluno(ra);
     }
     
     /**
@@ -56,8 +56,8 @@ public class Cadastro{
      * 
      * @param RA do Aluno
      */
-    public void editar(String ra){
-        armazenador.editarAluno(ra);
+    public boolean editar(String ra){
+        return armazenador.editarAluno(ra);
     }
     
     public void salvar(String arqNome){
@@ -68,10 +68,15 @@ public class Cadastro{
         arquivo.gravarObj(alunos);
     }
     
-    public boolean ler(String arqNome){
+    public boolean ler(String arqNome){   
         arquivo = new ArquivoBinario(arqNome);
         Aluno alunos[] = (Aluno[])arquivo.lerObj();
-        for(int i = 0;i<10;i++){
+        if(alunos == null){
+            return false;
+        }
+        System.out.print(alunos.length);
+        armazenador = new ArmazenadorArray(alunos.length);
+        for(int i = 0;i<alunos.length;i++){
             if(alunos[i] != null)
                 armazenador.inserirAluno(alunos[i]);
         }
