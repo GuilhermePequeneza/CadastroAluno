@@ -71,12 +71,18 @@ public class App
         Cadastro cadastro = new Cadastro(qtdMaxima);
          
         do{                 
-            String[] itensMenu = {"1 - inserir", "2 - remover", "3 - editar", "4 - listar", "0 - sair"};
+            String[] itensMenu = {"1 - inserir", "2 - remover", "3 - editar", "4 - listar", "5 - salvar", "6 - ler", "0 - sair"};
             String[] confirmaErro = {"Deseja Sair?","1 - não", "0 - sim"};
             opcao = menu.criarMenu(itensMenu);
             
             //Troca de Operadores, e Chamada dos metodos respectivos
             switch(opcao){
+                case 6:
+                    cadastro.ler(entrada.lerString("Qual o nome do arquivo?"));
+                    break;
+                case 5:
+                    cadastro.salvar(entrada.lerString("Qual o nome do arquivo?"));
+                    break;
                 case 4:  //Opção para listar os alunos
                     //Utiliza as Classe de Armazenamento em vetores
                     cadastro.listar();

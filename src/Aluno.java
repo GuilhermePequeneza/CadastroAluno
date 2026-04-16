@@ -1,5 +1,5 @@
 package src;
-
+import java.io.Serializable;
 /**
  * Classe que Coloca o Aluno sendo uma Pessoa, adicionando RA, Disciplina e Semestre
  * 
@@ -10,7 +10,7 @@ package src;
  * 
  * @version 06/04/26
  */
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa implements Serializable{
     private String ra;
     private String disciplina;
     private int semestre;

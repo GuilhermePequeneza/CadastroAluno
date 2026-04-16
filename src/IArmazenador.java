@@ -18,4 +18,6 @@ public interface IArmazenador
     public void editarAluno(String ra);
     public int getQtdAlunos();
     public boolean verificarRa(String ra); //serve pra verificar se um RA ja esta sendo usado
+    public Aluno[] getAlunos();
+    public int getQtdMaxima();
 }

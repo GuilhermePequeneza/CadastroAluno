@@ -22,7 +22,7 @@ public class ArmazenadorArray implements IArmazenador
     boolean isGrafica = true; 
     
     private int qtdMaxima;
-    Aluno[] alunos;
+    public Aluno[] alunos;
     int qtdAlunos;
     
     /**
@@ -183,6 +183,13 @@ public class ArmazenadorArray implements IArmazenador
                 saida.mostrarMsg("Edição concluída com sucesso no modo texto!");
             }
         }
+    }
+    
+    public Aluno[] getAlunos(){
+        return alunos;
+    }
+    public int getQtdMaxima(){
+        return qtdMaxima;
     }
     
     /**
