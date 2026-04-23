@@ -1,4 +1,6 @@
 package src;
+
+ 
 /**
  * Inicia os métodos que serão usados nos Armazenadores implementados pela Interface
  * 

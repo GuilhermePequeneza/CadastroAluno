@@ -1,4 +1,6 @@
 package src;
+
+ 
 import java.io.Serializable;
 /**
  * Classe para armazenar o nome de uma pessoa. Possibilita inverter nome e limpar

@@ -1,5 +1,7 @@
 package src;
 
+ 
+
 /**
  * Classe usada para fazer o Cadastro dos Alunos
  * 
@@ -70,7 +72,7 @@ public class Cadastro{
     
     public boolean ler(String arqNome){   
         arquivo = new ArquivoBinario(arqNome);
-        Aluno alunos[] = (Aluno[])arquivo.lerObj();
+        Aluno alunos[] = (Aluno[])arquivo.CarregarObj();
         if(alunos == null){
             return false;
         }

@@ -1,5 +1,7 @@
 package src;
 
+ 
+
 
 /**
  * Escreva a descrição da interface IPersistencia aqui.
@@ -10,6 +12,6 @@ package src;
 
 public interface IPersistencia
 {    
-    public void gravarObj(Object objeto);
-    public Object lerObj();
+    public void gravarObj(Object objeto); //salva o arquivo com Objetos generalizado
+    public Object CarregarObj(); // 
 }

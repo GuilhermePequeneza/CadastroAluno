@@ -1,4 +1,6 @@
 package src;
+
+ 
 import java.io.Serializable;
 /**
  * Armazena um texto. Inverte texto e limpa espaços extras
