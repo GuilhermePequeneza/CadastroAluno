@@ -51,7 +51,7 @@ public class ArquivoBinario implements IPersistencia{
             objeto = (Object)input.readObject();  // le o objeto do arquivo
         }
         catch(Exception e){
-            System.out.println(e.toString());
+            return false;
         } finally {
             try {
                 input.close();
