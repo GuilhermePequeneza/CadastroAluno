@@ -1,5 +1,5 @@
 package src;
-
+import java.io.Serializable;
 /**
  * Classe para armazenar o nome de uma pessoa. Possibilita inverter nome e limpar
  * espaços extras (operaçoes herdados da classe pai).
@@ -12,7 +12,7 @@ package src;
  * 
  * @version 06/04/26
  */
-public class NomePessoa {
+public class NomePessoa implements Serializable{
     // Atributos
     private Texto nome;
 

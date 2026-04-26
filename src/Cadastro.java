@@ -1,5 +1,7 @@
 package src;
 
+ 
+
 /**
  * Classe usada para fazer o Cadastro dos Alunos
  * 
@@ -12,6 +14,7 @@ package src;
  */
 public class Cadastro{
     IArmazenador armazenador;
+    IPersistencia arquivo;
     
     /**
      * Construtor Armazena o armazenador que sua Arrays
@@ -27,8 +30,8 @@ public class Cadastro{
      * 
      * @param Objeto aluno
      */
-    public void inserir(Aluno a){
-        armazenador.inserirAluno(a);
+    public boolean inserir(Aluno a){
+        return armazenador.inserirAluno(a);
     }
     
     /**
@@ -36,8 +39,8 @@ public class Cadastro{
      * 
      * @param RA do aluno
      */
-    public void remover(String ra){
-        armazenador.removerAluno(ra);
+    public boolean remover(String ra){
+        return armazenador.removerAluno(ra);
     }
     
     /**
@@ -55,8 +58,37 @@ public class Cadastro{
      * 
      * @param RA do Aluno
      */
-    public void editar(String ra){
-        armazenador.editarAluno(ra);
+    public boolean editar(String ra){
+        return armazenador.editarAluno(ra);
+    }
+    
+    public void salvar(String arqNome){
+        arquivo = new ArquivoBinario(arqNome);
+        Aluno[] alunos;
+        alunos = new Aluno[armazenador.getQtdMaxima()];
+        alunos = armazenador.getAlunos();
+        arquivo.gravarObj(alunos);
+    }
+    
+    public boolean ler(String arqNome){   
+        arquivo = new ArquivoBinario(arqNome);
+        Aluno alunos[];
+        try{
+             alunos = (Aluno[])arquivo.lerObj();
+        }
+        catch(ClassCastException e){
+            return false;
+        }
+        if(alunos == null){
+            return false;
+        }
+        
+        armazenador = new ArmazenadorArray(alunos.length);
+        for(int i = 0;i<alunos.length;i++){
+            if(alunos[i] != null)
+                armazenador.inserirAluno(alunos[i]);
+        }
+        return true;
     }
     
     /**

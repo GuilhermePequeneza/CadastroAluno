@@ -1,4 +1,5 @@
 package src;
+import java.io.Serializable;
 /**
  * Classe Pessoa possui a idade e o nome como atributos
  * 
@@ -9,7 +10,7 @@ package src;
  * 
  * @version 06/04/26
  */
-public class Pessoa
+public class Pessoa implements Serializable
 {
     public NomePessoa nome;
     public int idade;

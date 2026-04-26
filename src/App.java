@@ -1,5 +1,7 @@
 package src;
 
+ 
+
 import src.Saida.*;
 import src.Entrada.*;
 /**
@@ -71,25 +73,46 @@ public class App
         Cadastro cadastro = new Cadastro(qtdMaxima);
          
         do{                 
-            String[] itensMenu = {"1 - inserir", "2 - remover", "3 - editar", "4 - listar", "0 - sair"};
+            String[] itensMenu = {"1 - inserir", "2 - remover", "3 - editar", "4 - listar", "5 - salvar", "6 - ler", "0 - sair"};
             String[] confirmaErro = {"Deseja Sair?","1 - não", "0 - sim"};
             opcao = menu.criarMenu(itensMenu);
             
             //Troca de Operadores, e Chamada dos metodos respectivos
             switch(opcao){
-                case 4:  //Opção para listar os alunos
+                //Ler Arquivo
+                case 6:
+                    if(cadastro.ler(entrada.lerString("Qual o nome do arquivo?"))){
+                        saida.mostrarMsg("Arquivo lido com sucesso");
+                        qtdAluno = cadastro.getQuantidadeAtual();
+                    }
+                    else{
+                        saida.mostrarMsg("Arquivo Invalido!!!");
+                    }
+                    break;
+                //Salvar Arquivo
+                case 5:
+                    cadastro.salvar(entrada.lerString("Qual o nome do arquivo?"));
+                    break;
+                //Listar os alunos
+                case 4:  
                     //Utiliza as Classe de Armazenamento em vetores
                     cadastro.listar();
                     break;
-                    
-                case 3: //Opção para editar alunos
+                //Editar alunos
+                case 3: 
                     if(qtdAluno > 0){
-                        raEdit = entrada.lerString("Qual o ra do aluno para editar?");                    
-                        
-                        //verificação de cancelamento
-                        if(raEdit == null || raEdit.equals("")){                            
-                            break;
-                        }
+                        do{
+                            raEdit = entrada.lerString("Qual o ra do aluno para editar?");                    
+                            
+                            //verificação de cancelamento
+                            if(raEdit == null){                                
+                                break;
+                            }
+                            if(raEdit.equals("")){
+                                saida.mostrarMsg("RA Vazio!!!");
+                                erro = 1;
+                            }
+                        }while(erro == 0);
                         raEdit = raEdit.toUpperCase().trim();                       
                         
                         cadastro.editar(raEdit);
@@ -98,8 +121,8 @@ public class App
                         saida.mostrarMsg("Não tem alunos cadastrados para editar");
                     }
                     break;    
-                    
-                case 2: //opção para remover alunos
+                //Remover alunos    
+                case 2: 
                     if(qtdAluno > 0){
                         ra = entrada.lerString("Qual o RA do aluno(RA1234567)?");
                         if(ra != null)
@@ -114,7 +137,7 @@ public class App
                     }
                     break;                  
                 
-                    
+                //Inserir alunos    
                 case 1:
                     if(!isGrafica){
                         if(qtdAluno == qtdMaxima){ //verifica se pode adicionar mais um aluno na ED, se puder ele faz o processo de inserção
@@ -230,6 +253,7 @@ public class App
                         qtdAluno++;
                         break;
                     }
+                    //Inserção por tela
                     else{
                         if(qtdAluno == qtdMaxima){ //verifica se pode adicionar mais um aluno na ED, se puder ele faz o processo de inserção
                             saida.mostrarMsg("Quantidade Maxima de alunos atingida\n");
@@ -242,7 +266,7 @@ public class App
                         qtdAluno = cadastro.getQuantidadeAtual();
                         break;
                     }
-                    
+                //Sair Da Aplicação    
                 case 0:    
                     opcao = menu.criarMenu(confirmaErro);
                     break;   

@@ -12,10 +12,12 @@ package src;
 public interface IArmazenador
 {   
     
-    public void inserirAluno(Aluno a);
-    public void removerAluno(String ra);
+    public boolean inserirAluno(Aluno a);
+    public boolean removerAluno(String ra);
     public void listarAlunos();    
-    public void editarAluno(String ra);
+    public boolean editarAluno(String ra);
     public int getQtdAlunos();
     public boolean verificarRa(String ra); //serve pra verificar se um RA ja esta sendo usado
+    public Aluno[] getAlunos();
+    public int getQtdMaxima();
 }
