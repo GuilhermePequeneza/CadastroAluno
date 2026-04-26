@@ -1,5 +1,7 @@
 package src;
 
+ 
+
 /**
  * Classe usada para fazer o Cadastro dos Alunos
  * 
@@ -70,11 +72,17 @@ public class Cadastro{
     
     public boolean ler(String arqNome){   
         arquivo = new ArquivoBinario(arqNome);
-        Aluno alunos[] = (Aluno[])arquivo.lerObj();
+        Aluno alunos[];
+        try{
+             alunos = (Aluno[])arquivo.lerObj();
+        }
+        catch(ClassCastException e){
+            return false;
+        }
         if(alunos == null){
             return false;
         }
-        System.out.print(alunos.length);
+        
         armazenador = new ArmazenadorArray(alunos.length);
         for(int i = 0;i<alunos.length;i++){
             if(alunos[i] != null)
