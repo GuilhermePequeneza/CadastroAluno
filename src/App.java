@@ -69,9 +69,26 @@ public class App
                     saida.mostrarMsg("A quantidade de alunos DEVE ser POSITIVA!! Tente Novamente");
                 }
             }
-        }while(erro == 1);  
-        Cadastro cadastro = new Cadastro(qtdMaxima);
-         
+        }while(erro == 1);
+        
+        int escolhaED = -1;
+        do {
+            String[] opcoesED = {"Qual estrutura de dados deseja usar?", "1 - Array", "2 - Lista Ligada"};
+            escolhaED = menu.criarMenu(opcoesED);
+        
+            if (escolhaED == 0) {        // usuário clicou cancelar
+                System.exit(0);
+            }
+        
+            if (escolhaED != 1 && escolhaED != 2) {
+                saida.mostrarMsg("Opção inválida! Digite 1 ou 2.");
+            }
+        
+        } while (escolhaED != 1 && escolhaED != 2);
+        
+        boolean usarLista = (escolhaED == 2);
+        Cadastro cadastro = new Cadastro(qtdMaxima, usarLista); 
+        
         do{                 
             String[] itensMenu = {"1 - inserir", "2 - remover", "3 - editar", "4 - listar", "5 - salvar", "6 - ler", "0 - sair"};
             String[] confirmaErro = {"Deseja Sair?","1 - não", "0 - sim"};

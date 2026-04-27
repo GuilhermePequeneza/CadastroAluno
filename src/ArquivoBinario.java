@@ -1,7 +1,7 @@
 package src;
 
- 
 
+import src.Saida.*;
 import java.io.*;
 /**
  * @author julio
@@ -9,6 +9,7 @@ import java.io.*;
  */
 public class ArquivoBinario implements IPersistencia{
     
+    ISaida saida = new SaidaGrafica();
     String nomeArq;
     
     ArquivoBinario(String nomeArq){
@@ -27,10 +28,14 @@ public class ArquivoBinario implements IPersistencia{
             File file = new File(this.nomeArq);
             output = new ObjectOutputStream(new FileOutputStream(file)); //envia o sinal para criar o arquivo, mas só cria nem escreve
             output.writeObject(objeto);  // escreve o objeto no arquivo
-
-        } catch(Exception e){
-            System.out.println(e.toString()); 
-        } finally {
+        }
+        catch(NullPointerException e){
+            saida.mostrarMsg("Cancelando!");
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        } 
+        finally {
             try {
                 output.close();
             } catch(Exception ex) {
@@ -52,11 +57,18 @@ public class ArquivoBinario implements IPersistencia{
             File file = new File(this.nomeArq);
             input = new ObjectInputStream(new FileInputStream(file));
             objeto = (Object)input.readObject();  // le o objeto do arquivo
-            System.out.println(" " + objeto); //deveria pirntar amas como o tooString deve estar no Aluno/NomePessoa
+            //System.out.println(" " + objeto); //deveria pirntar amas como o tooString deve estar no Aluno/NomePessoa
+        }
+        catch(FileNotFoundException e){
+            saida.mostrarMsg("Arquivo não encontrado");
+        }
+        catch(NullPointerException e){
+            saida.mostrarMsg("Cancelando!");
         }
         catch(Exception e){
             System.out.println(e.toString());
-        } finally {
+        } 
+        finally {
             try {
                 input.close();
             } catch(Exception ex) {
