@@ -75,10 +75,10 @@ public class Cadastro{
         return armazenador.editarAluno(ra);
     }
     
-    public void salvar(String arqNome) {
+    public boolean salvar(String arqNome) {
         arquivo = new ArquivoBinario(arqNome);
         Aluno[] alunos = armazenador.getAlunos();
-        arquivo.gravarObj(alunos);
+        return (arquivo.gravarObj(alunos));
     }
     
     public boolean ler(String arqNome){   

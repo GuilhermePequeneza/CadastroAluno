@@ -108,7 +108,12 @@ public class App
                     break;
                 //Salvar Arquivo
                 case 5:
-                    cadastro.salvar(entrada.lerString("Qual o nome do arquivo?"));
+                    if(cadastro.salvar(entrada.lerString("Qual o nome do arquivo?"))){
+                        saida.mostrarMsg("Arquivo Salvo com Sucesso");
+                    }
+                    else{
+                        saida.mostrarMsg("Erro ao salvar o arquivo");
+                    }
                     break;
                 //Listar os alunos
                 case 4:  

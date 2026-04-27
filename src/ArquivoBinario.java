@@ -1,7 +1,5 @@
 package src;
 
-
-import src.Saida.*;
 import java.io.*;
 /**
  * @author julio
@@ -9,7 +7,6 @@ import java.io.*;
  */
 public class ArquivoBinario implements IPersistencia{
     
-    ISaida saida = new SaidaGrafica();
     String nomeArq;
     
     ArquivoBinario(String nomeArq){
@@ -22,18 +19,21 @@ public class ArquivoBinario implements IPersistencia{
      * @param objeto objeto a ser gravado
      * @param nomeArq nome do arquivo
      */
-    public void gravarObj(Object objeto){
+    public boolean gravarObj(Object objeto){
         ObjectOutputStream output = null;
         try {
             File file = new File(this.nomeArq);
             output = new ObjectOutputStream(new FileOutputStream(file)); //envia o sinal para criar o arquivo, mas só cria nem escreve
             output.writeObject(objeto);  // escreve o objeto no arquivo
         }
+        catch(FileNotFoundException e){
+            return false;
+        }
         catch(NullPointerException e){
-            return false
+            return false;
         }
         catch(Exception e){
-            System.out.println(e.toString());
+            return false;
         } 
         finally {
             try {
@@ -42,6 +42,7 @@ public class ArquivoBinario implements IPersistencia{
                 // Nao faz nada!
             }
         }
+        return true;
     }
 
     /**
@@ -50,7 +51,7 @@ public class ArquivoBinario implements IPersistencia{
      * @param nomeArq nome do arquivo a ser lido
      * @return Object o objeto lido
      */
-    public Object CarregarObj(){
+    public Object lerObj(){
         Object objeto = null;
         ObjectInputStream input = null;
         try {
@@ -60,13 +61,13 @@ public class ArquivoBinario implements IPersistencia{
             //System.out.println(" " + objeto); //deveria pirntar amas como o tooString deve estar no Aluno/NomePessoa
         }
         catch(FileNotFoundException e){
-            saida.mostrarMsg("Arquivo não encontrado");
+            
         }
         catch(NullPointerException e){
-            saida.mostrarMsg("Cancelando!");
+            
         }
         catch(Exception e){
-            System.out.println(e.toString());
+            
         } 
         finally {
             try {

@@ -12,6 +12,6 @@ package src;
 
 public interface IPersistencia
 {    
-    public void gravarObj(Object objeto); //salva o arquivo com Objetos generalizado
-    public Object CarregarObj(); // 
+    public boolean gravarObj(Object objeto); //salva o arquivo com Objetos generalizado
+    public Object lerObj(); // 
 }
