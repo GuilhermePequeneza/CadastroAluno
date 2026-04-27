@@ -17,7 +17,22 @@ public class Cadastro{
     IPersistencia arquivo;
     
     /**
-     * Construtor Armazena o armazenador que sua Arrays
+     * Construtor com escolha de ED
+     * 
+     * @param qtd  Quantidade maxima de alunos
+     * @param usarLista     true = Lista ligada, false = Array
+     */
+    Cadastro(int qtd, boolean usarLista){
+        if(usarLista){
+            armazenador = new ArmazenadorLista(qtd);
+        }
+        else{
+            armazenador = new ArmazenadorArray(qtd);
+        }
+    }
+    
+    /**
+     * Construtor padrao
      * 
      * @param Quantidade maxima de alunos
      */
@@ -46,12 +61,10 @@ public class Cadastro{
     /**
      * Lista todos os alunos
      * 
-     * 
      */
     public void listar(){
         armazenador.listarAlunos();
     }    
-    
     
     /**
      * Intermediario para alterar os atributos do Aluno
@@ -62,11 +75,9 @@ public class Cadastro{
         return armazenador.editarAluno(ra);
     }
     
-    public void salvar(String arqNome){
+    public void salvar(String arqNome) {
         arquivo = new ArquivoBinario(arqNome);
-        Aluno[] alunos;
-        alunos = new Aluno[armazenador.getQtdMaxima()];
-        alunos = armazenador.getAlunos();
+        Aluno[] alunos = armazenador.getAlunos();
         arquivo.gravarObj(alunos);
     }
     

@@ -1,4 +1,6 @@
 package src;
+
+ 
 import java.io.Serializable;
 /**
  * Classe que Coloca o Aluno sendo uma Pessoa, adicionando RA, Disciplina e Semestre

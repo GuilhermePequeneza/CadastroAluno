@@ -1,4 +1,6 @@
 package src;
+
+ 
 import java.io.Serializable;
 /**
  * Classe Pessoa possui a idade e o nome como atributos
