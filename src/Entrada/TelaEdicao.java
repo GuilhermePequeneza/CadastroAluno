@@ -28,7 +28,7 @@ public class TelaEdicao extends JDialog {
     public TelaEdicao() {
         this.setModal(true); // Bloqueia o app até fechar
         setTitle("Editar Aluno");
-        setSize(400, 300);
+        setSize(780,480);
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         criarComponentes();
