@@ -30,7 +30,7 @@ public class ArquivoBinario implements IPersistencia{
             output.writeObject(objeto);  // escreve o objeto no arquivo
         }
         catch(NullPointerException e){
-            saida.mostrarMsg("Cancelando!");
+            return false
         }
         catch(Exception e){
             System.out.println(e.toString());
