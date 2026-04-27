@@ -102,17 +102,22 @@ public class App
                 case 3: 
                     if(qtdAluno > 0){
                         do{
+                            erro = 0;
                             raEdit = entrada.lerString("Qual o ra do aluno para editar?");                    
                             
                             //verificação de cancelamento
-                            if(raEdit == null){                                
+                            if(raEdit == null){
+                                erro = 1;
                                 break;
                             }
                             if(raEdit.equals("")){
                                 saida.mostrarMsg("RA Vazio!!!");
                                 erro = 1;
                             }
-                        }while(erro == 0);
+                        }while(erro == 1);
+                        if(erro == 1){
+                            break;
+                        }
                         raEdit = raEdit.toUpperCase().trim();                       
                         
                         cadastro.editar(raEdit);
