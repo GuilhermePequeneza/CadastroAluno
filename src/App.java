@@ -98,6 +98,7 @@ public class App
             switch(opcao){
                 case 6:
                     cadastro.ler(entrada.lerString("Qual o nome do arquivo?"));
+                    qtdAluno = cadastro.getQuantidadeAtual();
                     break;
                 case 5:
                     cadastro.salvar(entrada.lerString("Qual o nome do arquivo?"));
