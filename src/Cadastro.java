@@ -15,6 +15,8 @@ package src;
 public class Cadastro{
     IArmazenador armazenador;
     IPersistencia arquivo;
+    boolean usarLista;
+    int qtd;
     
     /**
      * Construtor com escolha de ED
@@ -23,6 +25,8 @@ public class Cadastro{
      * @param usarLista     true = Lista ligada, false = Array
      */
     Cadastro(int qtd, boolean usarLista){
+        this.usarLista = usarLista;
+        this.qtd = qtd;
         if(usarLista){
             armazenador = new ArmazenadorLista(qtd);
         }
@@ -92,9 +96,14 @@ public class Cadastro{
         }
         if(alunos == null){
             return false;
-        }
+        }            
         
-        armazenador = new ArmazenadorArray(alunos.length);
+        if(usarLista){
+            armazenador = new ArmazenadorLista(qtd);
+        }
+        else{
+            armazenador = new ArmazenadorArray(qtd);
+        }
         for(int i = 0;i<alunos.length;i++){
             if(alunos[i] != null)
                 armazenador.inserirAluno(alunos[i]);
