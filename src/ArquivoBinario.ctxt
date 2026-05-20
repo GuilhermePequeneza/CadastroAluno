@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=ArquivoBinario
+comment0.text=\r\n\ Salva\ os\ objetos\ dados\ em\ Binario\r\n\ \r\n\ @author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 10/05/26\r\n
+comment1.params=nomeArq
+comment1.target=ArquivoBinario(java.lang.String)
+comment2.params=objeto
+comment2.target=boolean\ gravarObj(java.lang.Object)
+comment2.text=\r\n\ Method\ gravarObj\ grava\ um\ objeto\ em\ arquivo\r\n\r\n\ @param\ objeto\ a\ ser\ gravado\r\n\ @return\ Retorna\ quando\ nao\ foi\ possivel\ gravar\r\n
+comment3.params=
+comment3.target=java.lang.Object\ lerObj()
+comment3.text=\r\n\ Le\ o\ objeto\r\n\r\n
+numComments=4

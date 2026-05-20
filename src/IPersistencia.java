@@ -4,10 +4,14 @@ package src;
 
 
 /**
- * Escreva a descrição da interface IPersistencia aqui.
+ * Interface para Salvamento de dados
  * 
- * @author (seu nome aqui) 
- * @version (um número da versão ou data aqui)
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 10/05/26
  */
 
 public interface IPersistencia

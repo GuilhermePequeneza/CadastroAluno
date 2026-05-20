@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Insercao
+comment0.text=\r\n\ Gerencia\ a\ intera\u00E7\u00E3o\ entre\ a\ interface\r\n\ gr\u00E1fica\ (TelaInsercao)\ e\ a\ estrutura\ de\ armazenamento\ (Cadastro).\r\n\ \r\n\ @author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 10/05/26\r\n
+comment1.params=tela\ cadastro
+comment1.target=Insercao(TelaInsercao,\ src.Cadastro)
+comment1.text=\r\n\ Construtor\ do\ Controlador\ de\ Inser\u00E7\u00E3o.\r\n\ Inicializa\ os\ atributos\ da\ classe\ e\ chama\ o\ m\u00E9todo\ para\ configurar\ os\ eventos\ da\ tela.\r\n\r\n\ @param\ tela\ A\ interface\ gr\u00E1fica\ contendo\ os\ campos\ de\ entrada\ de\ dados\ (View).\r\n\ @param\ cadastro\ O\ objeto\ respons\u00E1vel\ por\ armazenar\ os\ dados\ dos\ alunos\ no\ sistema\ (Model/DAO).\r\n
+comment2.params=
+comment2.target=void\ configurarEventos()
+comment2.text=\r\n\ Configura\ os\ ouvintes\ de\ eventos\ (ActionListeners)\ para\ os\ componentes\ visuais.\r\n\ Mapeia\ o\ clique\ do\ bot\u00E3o\ de\ confirma\u00E7\u00E3o\r\n\ para\ disparar\ o\ m\u00E9todo\ de\ inser\u00E7\u00E3o.\ Tamb\u00E9m\ mapeia\ o\ bot\u00E3o\ de\ cancelar\ para\ fechar\ a\ tela.\r\n
+comment3.params=
+comment3.target=void\ inserir()
+comment3.text=\r\n\ Coleta\ os\ dados\ preenchidos\ na\ interface\ gr\u00E1fica,\ realiza\ as\ valida\u00E7\u00F5es\ de\ regra\ \r\n\ de\ neg\u00F3cio\ (campos\ vazios,\ limites\ de\ idade,\ RA\ duplicado)\ e\ insere\ o\ novo\ aluno\r\n\ no\ cadastro.\ Em\ caso\ de\ sucesso,\ fecha\ a\ janela\ de\ inser\u00E7\u00E3o.\ Trata\ exce\u00E7\u00F5es\ caso\ \r\n\ o\ usu\u00E1rio\ digite\ texto\ em\ campos\ exclusivamente\ num\u00E9ricos.\r\n
+numComments=4

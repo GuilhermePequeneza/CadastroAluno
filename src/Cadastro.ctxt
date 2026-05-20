@@ -1,0 +1,31 @@
+#BlueJ class context
+comment0.target=Cadastro
+comment0.text=\r\n\ Classe\ usada\ para\ fazer\ o\ Cadastro\ dos\ Alunos\r\n\ \r\n@author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 10/05/26\r\n
+comment1.params=qtd\ usarLista
+comment1.target=Cadastro(int,\ boolean)
+comment1.text=\r\n\ Construtor\ com\ escolha\ de\ ED\r\n\ \r\n\ @param\ qtd\ \ Quantidade\ maxima\ de\ alunos\r\n\ @param\ usarLista\ \ \ \ \ true\ \=\ Lista\ ligada,\ false\ \=\ Array\r\n
+comment10.params=
+comment10.target=int\ getQuantidadeAtual()
+comment2.params=qtd
+comment2.target=Cadastro(int)
+comment2.text=\r\n\ Construtor\ padrao\r\n\ \r\n\ @param\ Quantidade\ maxima\ de\ alunos\r\n
+comment3.params=a
+comment3.target=boolean\ inserir(Aluno)
+comment3.text=\r\n\ Insere\ o\ Aluno\ desejado\r\n\ \r\n\ @param\ Objeto\ aluno\r\n
+comment4.params=ra
+comment4.target=boolean\ remover(java.lang.String)
+comment4.text=\r\n\ Remove\ o\ aluno\ com\ base\ em\ seu\ RA\r\n\ \r\n\ @param\ RA\ do\ aluno\r\n
+comment5.params=
+comment5.target=void\ listar()
+comment5.text=\r\n\ Lista\ todos\ os\ alunos\r\n\ \r\n
+comment6.params=ra
+comment6.target=boolean\ editar(java.lang.String)
+comment6.text=\r\n\ Intermediario\ para\ alterar\ os\ atributos\ do\ Aluno\r\n\ \r\n\ @param\ RA\ do\ Aluno\r\n
+comment7.params=arqNome
+comment7.target=boolean\ salvar(java.lang.String)
+comment8.params=arqNome
+comment8.target=boolean\ ler(java.lang.String)
+comment9.params=ra
+comment9.target=boolean\ verificarRa(java.lang.String)
+comment9.text=\r\n\ Intermediario\ para\ verificar\ se\ o\ RA\ existe\r\n\ \r\n\ @param\ String\ RA\r\n\ \r\n\ @return\ True\ ou\ false\r\n
+numComments=11

@@ -9,14 +9,14 @@ import javax.swing.JOptionPane;
  * @author Igor Dias
  * @author Thierry Nadjarian 
  * 
- * @version 06/04/26
+ * @version 10/05/26
  */
 public class EntradaGrafica implements IEntrada {
 
     /**
      * Método lerString - le uma string pelo teclado e retorna
      *
-     * @param mensagem Mesnsage na console
+     * @param Mesnsage na console
      * @return s string lida
      */
     public String lerString(String mensagem){

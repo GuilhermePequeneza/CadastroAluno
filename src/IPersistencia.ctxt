@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=IPersistencia
+comment0.text=\r\n\ Interface\ para\ Salvamento\ de\ dados\r\n\ \r\n\ @author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 10/05/26\r\n
+comment1.params=objeto
+comment1.target=boolean\ gravarObj(java.lang.Object)
+comment2.params=
+comment2.target=java.lang.Object\ lerObj()
+numComments=3

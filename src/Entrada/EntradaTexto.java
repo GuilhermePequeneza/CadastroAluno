@@ -4,19 +4,19 @@ import java.util.Scanner;
 /**
  * Classe principal.
  * 
- * @author Felipe Estima
+* @author Felipe Estima
  * @author Guilherme Pequeneza
  * @author Igor Dias
  * @author Thierry Nadjarian 
  * 
- * @version 06/04/26
+ * @version 10/05/26
  */
 public class EntradaTexto implements IEntrada {
 
     /**
      * Ler String
      *
-     * @param mensagem Mensagem no console
+     * @param Mensagem no console
      * @return s string lida
      */
     public String lerString(String mensagem){

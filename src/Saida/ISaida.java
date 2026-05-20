@@ -7,7 +7,7 @@ package src.Saida;
  * @author Igor Dias
  * @author Thierry Nadjarian 
  * 
- * @version 06/04/26
+ * @version 10/05/26
  */
 
 public interface ISaida {

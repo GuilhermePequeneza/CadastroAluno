@@ -2,8 +2,14 @@ package src;
 
 import java.io.*;
 /**
- * @author julio
- * Classe para gravar e ler arquivo binario
+ * Salva os objetos dados em Binario
+ * 
+ * @author Felipe Estima
+ * @author Guilherme Pequeneza
+ * @author Igor Dias
+ * @author Thierry Nadjarian 
+ * 
+ * @version 10/05/26
  */
 public class ArquivoBinario implements IPersistencia{
     
@@ -16,8 +22,8 @@ public class ArquivoBinario implements IPersistencia{
     /**
      * Method gravarObj grava um objeto em arquivo
      *
-     * @param objeto objeto a ser gravado
-     * @param nomeArq nome do arquivo
+     * @param objeto a ser gravado
+     * @return Retorna quando nao foi possivel gravar
      */
     public boolean gravarObj(Object objeto){
         ObjectOutputStream output = null;
@@ -46,10 +52,8 @@ public class ArquivoBinario implements IPersistencia{
     }
 
     /**
-     * Method lerObj
+     * Le o objeto
      *
-     * @param nomeArq nome do arquivo a ser lido
-     * @return Object o objeto lido
      */
     public Object lerObj(){
         Object objeto = null;

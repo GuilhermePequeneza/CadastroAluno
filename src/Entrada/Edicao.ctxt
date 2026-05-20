@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Edicao
+comment0.text=\r\n\ Faz\ a\ ponte\ entre\ a\ interface\ grafica\ e\ o\ modelo\ de\ dados\r\n\ \r\n\ @author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 10/05/26\r\n
+comment1.params=tela\ aluno
+comment1.target=Edicao(TelaEdicao,\ src.Aluno)
+comment1.text=\r\n\ Construtor\ da\ classe\ Edicao.\r\n\ Inicializa\ o\ controlador,\ carrega\ os\ dados\ atuais\ do\ aluno\ para\ exibi\u00E7\u00E3o\ nos\ campos\r\n\ da\ interface\ e\ configura\ as\ a\u00E7\u00F5es\ dos\ bot\u00F5es.\r\n\ \r\n\ @param\ tela\ A\ interface\ gr\u00E1fica\ de\ edi\u00E7\u00E3o\ que\ ser\u00E1\ exibida\ ao\ usu\u00E1rio.\r\n\ @param\ aluno\ O\ objeto\ do\ tipo\ Aluno\ que\ ter\u00E1\ seus\ dados\ modificados.\r\n
+comment2.params=
+comment2.target=void\ configurarEventos()
+comment2.text=\r\n\ Configura\ os\ ouvintes\ de\ eventos\ (ActionListeners)\ para\ os\ bot\u00F5es\ interativos\ da\ tela.\r\n\ Mapeia\ o\ bot\u00E3o\ de\ confirmar\ para\ o\ m\u00E9todo\ de\ salvamento\ e\ o\ bot\u00E3o\ de\ cancelar\ para\ fechar\ a\ janela.\r\n
+comment3.params=
+comment3.target=void\ salvarEdicao()
+comment3.text=\r\n\ Coleta\ as\ informa\u00E7\u00F5es\ digitadas\ na\ tela,\ valida\ os\ dados\ e\ atualiza\ o\ objeto\ Aluno.\r\n\ Impede\ que\ o\ usu\u00E1rio\ deixe\ campos\ de\ texto\ vazios\ e\ trata\ exce\u00E7\u00F5es\ caso\ letras\r\n\ sejam\ digitadas\ em\ campos\ num\u00E9ricos\ (Idade\ e\ Semestre).\ Em\ caso\ de\ sucesso,\ atualiza\r\n\ a\ refer\u00EAncia\ na\ mem\u00F3ria\ e\ fecha\ a\ tela\ de\ edi\u00E7\u00E3o.\r\n
+numComments=4

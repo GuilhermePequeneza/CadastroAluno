@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Aluno
+comment0.text=\r\n\ Classe\ que\ Coloca\ o\ Aluno\ sendo\ uma\ Pessoa,\ adicionando\ RA,\ Disciplina\ e\ Semestre\r\n\ \r\n\ @author\ Felipe\ Estima\r\n\ @author\ Guilherme\ Pequeneza\r\n\ @author\ Igor\ Dias\r\n\ @author\ Thierry\ Nadjarian\ \r\n\ \r\n\ @version\ 10/05/26\r\n
+comment1.params=nome\ idade\ ra\ disciplina\ semestre
+comment1.target=Aluno(java.lang.String,\ int,\ java.lang.String,\ java.lang.String,\ int)
+comment1.text=\r\n\ Construtor\:\ Armazena\ Nome,\ idade,\ RA,\ Displina,\ Semestre\r\n\ \r\n\ @param\ Int\ Nome,\ Int\ Idade,\ String\ RA,\ String\ Disciplina,\ Int\ Semestre\r\n
+comment2.params=
+comment2.target=java.lang.String\ getRA()
+comment2.text=\r\n\ Pega\ o\ RA\ do\ aluno\r\n\ \r\n\ @return\ RA\ do\ aluno\r\n
+comment3.params=
+comment3.target=java.lang.String\ getDisciplina()
+comment3.text=\r\n\ Pega\ a\ Disciplina\ do\ aluno\r\n\ \r\n\ @return\ Disciplina\ do\ aluno\r\n
+comment4.params=
+comment4.target=int\ getSemestre()
+comment4.text=\r\n\ Pega\ o\ semestre\ do\ aluno\r\n\ \r\n\ @return\ Semestre\ do\ aluno\r\n
+comment5.params=disciplina
+comment5.target=void\ setDisciplina(java.lang.String)
+comment5.text=\r\n\ Define\ Disciplina\r\n\ \r\n\ @param\ String\ Disciplina\r\n
+comment6.params=semestre
+comment6.target=void\ setSemestre(int)
+comment6.text=\r\n\ Define\ o\ Semestre\r\n\ \r\n\ @param\ Int\ Semestre\r\n
+comment7.params=
+comment7.target=java.lang.String\ toString()
+comment7.text=\r\n\ Retorna\ as\ informa\u00E7\u00F5es\ (Nome,\ Idade,\ RA,\ Disciplina\ e\ Semestre)\ com\ quebras\ de\ linha,\ facilitando\ a\ exibi\u00E7\u00E3o\ \r\n\ no\ console\ ou\ em\ interfaces\ gr\u00E1ficas.\r\n\ \r\n\ @return\ Uma\ String\ contendo\ as\ informa\u00E7\u00F5es\ detalhadas\ do\ aluno.\r\n
+numComments=8

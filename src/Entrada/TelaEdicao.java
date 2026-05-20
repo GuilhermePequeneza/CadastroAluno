@@ -6,13 +6,12 @@ import java.awt.*;
 
 /**
  * Classe responsável por gerar a interface gráfica de edição de alunos.
- * 
  * @author Felipe Estima
  * @author Guilherme Pequeneza
  * @author Igor Dias
  * @author Thierry Nadjarian 
  * 
- * @version 06/04/26
+ * @version 10/05/26
  */
 
 public class TelaEdicao extends JDialog {
