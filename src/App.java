@@ -34,7 +34,7 @@ public class App
        
         int erro = 0;
         int pos;
-        int qtdMaxima = 0;
+        int qtdMaxima = 100;
         int qtdAluno = 0;
         String input = null; // Para a gente guardar o input generico antes de dar parse
         String nomeAluno = null;
@@ -45,31 +45,6 @@ public class App
         int semestre = 0;
         int opcao;        
 
-        //Buscando possiveis erros na primeira instancia do Cadastro Aluno
-        do{
-            try{
-                erro = 0;
-                input = entrada.lerString("Qual a quantidade de alunos?");
-    
-            if (input == null) {       // usuário clicou X assim que Iniciou
-                System.exit(0);       
-            }
-            
-            qtdMaxima = Integer.parseInt(input);
-            } catch(NumberFormatException e){
-                erro = 1;
-                saida.mostrarMsg("QUANTIDADE INVALIDA!!! Tente Novamente");
-            } catch(Exception e){
-                erro = 1;
-                saida.mostrarMsg("ERRO!! Tente Novamente!");
-            }            
-            if(erro == 0){
-                if(qtdMaxima <= 0){
-                    erro = 1;
-                    saida.mostrarMsg("A quantidade de alunos DEVE ser POSITIVA!! Tente Novamente");
-                }
-            }
-        }while(erro == 1);
         
         int escolhaED = -1;
         do {
